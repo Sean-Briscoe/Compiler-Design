@@ -8,8 +8,8 @@
 
 "**".*	{}
 
-"}"		{ 
-			printf ("syntax error\n");
+"}"	{  	/* '}' before '{' */
+		printf ("syntax error\n");
         	return 0;
         }
 
@@ -26,7 +26,7 @@
                 break; /* found the end. */
              }
 
-             if (c == EOF)
+             if (c == EOF)	/* End of file before end of comment */
              {
                printf ("syntax error\n");
                break;
